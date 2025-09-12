@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booknest - Fiction Books</title>
+  <link rel="stylesheet" href="style/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/atogoreis.css">
+  <style>
+    /* Flip Cards */
+
+    .book-row {
+      margin-bottom: 2.5rem;
+    }
+
+    .fiction-header {
+      background: rgba(165, 42, 42, 0.85);
+      color: #fff;
+      padding: 3rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <span style="color: red;">Book</span><span style="color: yellow;">nest</span>📙</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid-fill"></i> Categories</a>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex gap-2">
+          <input class="form-control" type="search" placeholder="Search books...">
+          <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill bi1"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+        
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fiction Header -->
+  <div class="fiction-header text-center">
+    <h1 class="fw-bold">Fiction Books</h1>
+    <p class="lead">Dive into stories full of imagination, adventure, and creativity</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container my-4">
+    <!-- Row 1 -->
+    <div class="row justify-content-center g-3 book-row">
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/a-man-called-ove.webp">
+            </div>
+            <div class="flip-card-back">
+              <h6>A Man Called Ove</h6>
+              <p>By Fredrik Backman<br>₹379</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('A Man Called Ove','Fredrik Backman','379','img/fictional/a-man-called-ove.webp','Heartwarming tale of friendship and kindness.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/hp.webp">
+              <span class="badge bg-warning position-absolute m-2">Classic</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Harry Potter</h6>
+              <p>By J.K. Rowling<br>₹499</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('Harry Potter','J.K. Rowling','499','img/fictional/hp.webp','The magical beginning of the Harry Potter saga.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/the-tide.jpg">
+              <span class="badge bg-success position-absolute m-2">Thriller</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>The Tide</h6>
+              <p>By Anthony Melchiorri<br>₹459</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('The Tide','Anthony Melchiorri','459','img/fictional/the-tide.jpg','A techno-thriller of viruses and warfare.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/the-great.webp">
+              <span class="badge bg-info position-absolute m-2">Bestseller</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>The Great Gatsby</h6>
+              <p>By F. Scott Fitzgerald<br>₹349</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('The Great Gatsby','F. Scott Fitzgerald','349','img/fictional/the-great.webp','A Jazz Age masterpiece of love and obsession.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row justify-content-center g-3 book-row">
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/pride-prejustin.jpg">
+            </div>
+            <div class="flip-card-back">
+              <h6>Pride & Prejudice</h6>
+              <p>By Jane Austen<br>₹329</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('Pride & Prejudice','Jane Austen','329','img/fictional/pride-prejustin.jpg','Classic romance full of wit and love.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/1984.jpg">
+            </div>
+            <div class="flip-card-back">
+              <h6>1984</h6>
+              <p>By George Orwell<br>₹379</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('1984','George Orwell','379','img/fictional/1984.jpg','A dystopian classic about surveillance and freedom.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/the-hobbit.jpg">
+            </div>
+            <div class="flip-card-back">
+              <h6>The Hobbit</h6>
+              <p>By J.R.R. Tolkien<br>₹459</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('The Hobbit','J.R.R. Tolkien','459','img/fictional/the-hobbit.jpg','Bilbo Baggins embarks on an epic fantasy quest.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/fictional/Alchemist-Cover.jpg">
+            </div>
+            <div class="flip-card-back">
+              <h6>The Alchemist</h6>
+              <p>By Paulo Coelho<br>₹349</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation();viewDetails('The Alchemist','Paulo Coelho','349','img/fictional/Alchemist-Cover.jpg','A shepherd’s journey of dreams and destiny.')">
+                View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row">
+      
+      <!-- Brand / About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+        <p>
+          Your one-stop destination for books across all genres. 
+          Discover, read, and grow with us. 📚
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+        <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+        <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+        <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <!-- Popular Categories (Replaced Newsletter) -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+        <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+        <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+        <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>Booknest</strong>. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function viewDetails(title, author, price, img, desc) {
+      const encodedDesc = encodeURIComponent(desc);
+      const encodedImg = encodeURIComponent(img);
+      window.location.href = `details.html?title=${title}&author=${author}&price=${price}&img=${encodedImg}&desc=${encodedDesc}`;
+    }
+  </script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>

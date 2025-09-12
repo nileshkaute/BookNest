@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booknest - Non-Fiction Books</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-kyZxW1zPpT9ffOZ8Yv5jPvKd3Xv4+c3rYIu6gUFS2vKIRB3+Ls2s6B8F+0yZfrBjY8t2vCyYgFoFFN3oT5XkZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/catogoreis.css">
+  <style>
+    /* Custom styles for flip cards */
+
+    .non-fiction-header {
+      background-color: rgba(228, 18, 123, 0.852);
+      /* A different color for this category */
+      color: white;
+      height: 200px;
+    }
+
+    /* Responsive adjustments */
+  </style>
+</head>
+
+<body>
+  <canvas id="bg"></canvas>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span style="color: red;">Book</span><span
+          style="color: yellow;">nest</span>📙</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-grid-fill"></i> Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <form class="d-flex align-items-center gap-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+          <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill bi1"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="non-fiction-header text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Non-Fiction Books</h1>
+      <p class="lead">Explore profound ideas, real-world events, and expert knowledge.</p>
+    </div>
+  </div>
+  <div class="container mt-3 mt-md-5">
+    <div class="row justify-content-center g-3 book-row">
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/atomic-habits-by-james-clear.webp" alt="Atomic Habits">
+              <span class="badge bg-info position-absolute top-0 end-0 m-2">Bestseller</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Atomic Habits</h6>
+              <p> By James Clear<br>Price: ₹599</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Atomic Habits', 'James Clear', '599', 'img/non-fictional copy/atomic-habits-by-james-clear.webp', 'An easy and proven way to build good habits and break bad ones. James Clear, an expert on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/the-power-of-habbit.jpg" alt="The Power of Habit">
+              <span class="badge bg-danger position-absolute top-0 end-0 m-2">Influential</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>The Power of Habit</h6>
+              <p>By Charles Duhigg<br>Price: ₹499</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('The Power of Habit', 'Charles Duhigg', '499', 'img/non-fictional copy/the-power-of-habbit.jpg', 'A young woman in a new city. A corporation on the brink of collapse. A civil rights movement. At the core of their success are habits. In The Power of Habit, award-winning business reporter Charles Duhigg takes us to the thrilling edge of scientific discoveries that explain why habits exist and how they can be changed.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/brief-history-time.webp" alt="A Brief History of Time">
+              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Classic</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>A Brief History of Time</h6>
+              <p>By Stephen Hawking<br>Price: ₹550</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('A Brief History of Time', 'Stephen Hawking', '550', 'img/non-fictional copy/brief-history-time.webp', 'From the big bang to black holes, this landmark book has been a classic for readers of all ages. Stephen Hawking writes in a clear, accessible style that anyone can understand, telling us about the origins of the universe and where it is going.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/thinking-fast-slow.jpeg" alt="Thinking, Fast and Slow">
+              <span class="badge bg-success position-absolute top-0 end-0 m-2">Psychology</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Thinking, Fast and Slow</h6>
+              <p>By Daniel Kahneman<br>Price: ₹620</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Thinking, Fast and Slow', 'Daniel Kahneman', '620', 'img/non-fictional copy/thinking-fast-slow.jpeg', 'In the international bestseller, Thinking, Fast and Slow, Daniel Kahneman, the renowned psychologist and winner of the Nobel Prize in Economics, takes us on a groundbreaking tour of the mind and explains the two systems that drive the way we think.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-3 book-row">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/frekonmics.webp" alt="Freakonomics">
+            </div>
+            <div class="flip-card-back">
+              <h6>Freakonomics</h6>
+              <p>By S. Levitt & S. Dubner<br>Price: ₹480</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Freakonomics', 'S. Levitt & S. Dubner', '480', 'img/non-fictional copy/frekonmics.webp', 'Which is more dangerous, a gun or a swimming pool? What do schoolteachers and sumo wrestlers have in common? The book explores the hidden side of everything, revealing that the modern world is even more intriguing than we think.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/the-power-of-introverts.jpeg" alt="Quiet">
+            </div>
+            <div class="flip-card-back">
+              <h6>Quiet: The Power of Introverts</h6>
+              <p>By Susan Cain<br>Price: ₹510</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Quiet: The Power of Introverts', 'Susan Cain', '510', 'img/non-fictional copy/the-power-of-introverts.jpeg', 'In a world that can\'t stop talking, Susan Cain argues that we dramatically undervalue introverts and shows how much we lose in doing so. She charts the rise of the Extrovert Ideal throughout the twentieth century and explores how deeply it has come to permeate our culture.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/the-7-habits-of-highly-effective-people-infographics-edition.jpg"
+                alt="The 7 Habits of Highly Effective People">
+            </div>
+            <div class="flip-card-back">
+              <h6>The 7 Habits of Highly Effective People</h6>
+              <p>By Stephen R. Covey<br>Price: ₹650</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('The 7 Habits of Highly Effective People', 'Stephen R. Covey', '650', 'img/non-fictional copy/the-7-habits-of-highly-effective-people-infographics-edition.', 'One of the most inspiring and impactful books ever written, this book has captivated readers for nearly three decades. It presents a principle-centered approach for solving personal and professional problems.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/non-fictional copy/How-to-Win-Friends-and-Influence-People-768x1186.jpg"
+                alt="How to Win Friends and Influence People">
+            </div>
+            <div class="flip-card-back">
+              <h6>How to Win Friends and Influence People</h6>
+              <p>By Dale Carnegie<br>Price: ₹399</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('How to Win Friends and Influence People', 'Dale Carnegie', '399', 'img/non-fictional copy/How-to-Win-Friends-and-Influence-People-768x1186.jpg', 'Dale Carnegie’s rock-solid, time-tested advice has carried countless people up the ladder of success in their business and personal lives. An all-time bestseller, it will teach you the six ways to make people like you, the twelve ways to win people to your way of thinking, and the nine ways to change people without arousing resentment.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row">
+      
+      <!-- Brand / About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+        <p>
+          Your one-stop destination for books across all genres. 
+          Discover, read, and grow with us. 📚
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+        <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+        <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+        <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <!-- Popular Categories (Replaced Newsletter) -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+        <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+        <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+        <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>Booknest</strong>. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function viewDetails(title, author, price, img, desc) {
+      const encodedDesc = encodeURIComponent(desc);
+      const encodedImg = encodeURIComponent(img);
+      window.location.href = `details.html?title=${title}&author=${author}&price=${price}&img=${encodedImg}&desc=${encodedDesc}`;
+    }
+  </script>
+
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+
+  </script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>

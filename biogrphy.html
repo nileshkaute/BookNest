@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booknest - Biography Books</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style/catogoreis.css">
+  <style>
+  
+    .biography-header {
+      background-color: rgba(42, 87, 165, 0.852);
+      color: white;
+      height: 200px;
+    }
+   
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span style="color: red;">Book</span><span
+          style="color: yellow;">nest</span>📙</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-grid-fill"></i> Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <form class="d-flex align-items-center gap-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+           <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill bi1"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+         
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="biography-header text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Biography Books</h1>
+      <p class="lead">Discover the extraordinary lives of remarkable individuals through their inspiring stories</p>
+    </div>
+  </div>
+
+  <!-- Row 1 -->
+  <div class="container mt-3 mt-md-5">
+    <div class="row justify-content-center g-3 book-row">
+     
+     <!-- Steve Jobs -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/Steve-Jobs.jpg">
+        <span class="badge bg-info position-absolute top-0 end-0 m-2">Bestseller</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Steve Jobs</h6>
+        <p>By Walter Isaacson <br> Price: ₹679</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Steve Jobs','Walter Isaacson','679','img/biography/Steve-Jobs.jpg','Steve Jobs biography that explores the journey of the Apple co-founder, his innovations, struggles, failures, and ultimate success. A deep dive into how he changed technology and design forever.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Becoming -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/becoming.jpg">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">New</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Becoming</h6>
+        <p>By Michelle Obama <br> Price: ₹729</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Becoming','Michelle Obama','729','img/biography/becoming.jpg','Michelle Obama memoir that tells her life story from childhood to First Lady, her struggles, values, and inspiring journey of hope, leadership, and resilience.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wings of Fire -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/wings-of-fire.jpeg">
+        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Classic</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Wings of Fire</h6>
+        <p>By A.P.J. Abdul Kalam <br> Price: ₹350</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Wings of Fire','A.P.J. Abdul Kalam','350','img/biography/wings-of-fire.jpeg','APJ Abdul Kalam autobiography that shares his humble beginnings, challenges, scientific contributions, and how he rose to become India’s Missile Man and President.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Anne Frank -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/the-diary.jpg">
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Inspirational</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>The Diary of a Young Girl</h6>
+        <p>By Anne Frank <br> Price: ₹459</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The Diary of a Young Girl','Anne Frank','459','img/biography/the-diary.jpg','Diary of Anne Frank that captures the fears, hopes, and strength of a young girl hiding during World War II, offering a timeless message of courage and humanity.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row justify-content-center g-3 book-row">
+     <!-- Educated -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/educated.jpg">
+      </div>
+      <div class="flip-card-back">
+        <h6>Educated</h6><p>By Tara Westover <br> Price: ₹550</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Educated','Tara Westover','550','img/biography/educated.jpg','Educated is a memoir by Tara Westover that tells the remarkable story of her journey from growing up in a strict, survivalist family with no formal schooling to earning a PhD from Cambridge University. It is a powerful tale of resilience, the struggle for self-identity, and the transformative power of education.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sapiens -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/sapiens.avif">
+      </div>
+      <div class="flip-card-back">
+        <h6>Sapiens</h6><p>By Yuval Noah Harari <br> Price: ₹650</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Sapiens','Yuval Noah Harari','650','img/biography/sapiens.avif','Sapiens by Yuval Noah Harari is a groundbreaking exploration of human history, tracing our journey from primitive hunter-gatherers to modern societies. It examines how culture, religion, economics, and science shaped humanity and challenges readers to reflect on our past, present, and uncertain future.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- I Am Malala -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/i-am-malala.avif">
+      </div>
+      <div class="flip-card-back">
+        <h6>I am Malala</h6>
+        <p>By Malala Yousafzai <br> Price: ₹450</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('I Am Malala','Malala Yousafzai','450','img/biography/i-am-malala.avif','I Am Malala is the inspiring autobiography of Malala Yousafzai, the youngest Nobel Prize laureate. It recounts her courageous fight for girls’ education in Pakistan, her survival after being attacked by the Taliban, and her rise as a global advocate for human rights and education for all.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Malcolm X -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/biography/Malcolm_X.jpg">
+      </div>
+      <div class="flip-card-back">
+        <h6>The Autobiography of Malcolm X</h6>
+        <p>By Malcolm X, Alex Haley <br> Price: ₹649</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The Autobiography of Malcolm X','Malcolm X','649','img/biography/Malcolm_X.jpg','The Autobiography of Malcolm X, told to Alex Haley, is a powerful narrative of transformation—from Malcolm’s troubled youth to his rise as a leading voice for Black empowerment and human rights. It is an honest, raw, and thought-provoking account that continues to inspire and challenge readers worldwide.')">
+          View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row">
+      
+      <!-- Brand / About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+        <p>
+          Your one-stop destination for books across all genres. 
+          Discover, read, and grow with us. 📚
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+        <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+        <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+        <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <!-- Popular Categories (Replaced Newsletter) -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+        <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+        <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+        <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>Booknest</strong>. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function viewDetails(title, author, price, img, desc) {
+      const encodedDesc = encodeURIComponent(desc);
+      const encodedImg = encodeURIComponent(img);
+      window.location.href = `details.html?title=${title}&author=${author}&price=${price}&img=${encodedImg}&desc=${encodedDesc}`;
+    }
+  </script>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

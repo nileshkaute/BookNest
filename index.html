@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booknest📙</title>
+
+  
+  
+  <!-- Font Awesome 6.5.0 CDN -->
+
+  <!-- ✅ Bootstrap CSS -->
+ <!-- ✅ Working Font Awesome -->
+  <link rel="stylesheet" href="style/style.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-kyZxW1zPpT9ffOZ8Yv5jPvKd3Xv4+c3rYIu6gUFS2vKIRB3+Ls2s6B8F+0yZfrBjY8t2vCyYgFoFFN3oT5XkZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+  </style>
+
+</head>
+
+<body>
+  <!-- nav -->
+  <nav class="navbar  navbar-expand-lg w-100">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html"><span id="bradn1" style="color: red;">Book</span><span id="brand"
+          style="color: yellow;">nest</span>📙</a>
+
+      <!-- Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Center Nav Links -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 text-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-telephone-fill"></i> Contact</a>
+          </li>
+
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-grid-fill"></i> Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Search, Cart, Login -->
+        <form class="d-flex align-items-center gap-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+
+          <!-- Cart Button with Count -->
+          <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill bi1 "></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+          <!-- Login Button -->
+          <a href="#" class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#authModal">Login</a>
+
+
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- alert -->
+  <div class="alert alert-warning alert-dismissible fade show mt-2 text-center" role="alert">
+    📚 <strong>Special Bookstore Deal!</strong> Flat 30% off on selected novels today only!
+
+  </div>
+
+  <!-- banner -->
+  <div class="banner">
+    <img src="img/1.jpeg" alt="" width="100%" height="290px">
+  </div>
+
+  <!--frsutred cards -->
+  <div class="container mt-5 " id="book-cards">
+    <div class="row justify-content-center g-5">
+      <h1>Featured Books</h1>
+      <!-- Card 1 -->
+    <div class="col-6 col-sm-6 col-md-3 md">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/New-rules-of-war.jpg" alt="Book 1">
+      </div>
+      <div class="flip-card-back">
+        <h6>The New Rules of War</h6>
+        <p>By Sean McFate <br> Price: ₹399</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The New Rules of War', 'Sean McFate', '349', 'img/New-rules-of-war.jpg', 'The New Rules of War is a bold and provocative book by military strategist Sean McFate that challenges traditional ideas of warfare. In an era where cyberattacks, disinformation campaigns, mercenaries, and invisible enemies dominate the battlefield, McFate explains why conventional military power is becoming obsolete. Through real-world examples, historical insights, and firsthand experience, he lays out ten revolutionary rules that reveal how modern conflicts are truly fought and won. This is not just a guide for governments and military professionals but also a wake-up call for ordinary readers to understand the hidden battles shaping the future of global security.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="col-6 col-sm-6 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/the-drone-age.jpg" alt="Book 2">
+      </div>
+      <div class="flip-card-back">
+        <h6>The Drone Age</h6>
+        <p>By Michael J. Boyle <br> Price: ₹449</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The Drone Age', 'Michael J. Boyle', '399', 'img/the-drone-age.jpg', 'The Drone Age by Michael J. Boyle explores how drones have transformed not just modern warfare but politics, security, and everyday life. The book examines how drones are used for targeted strikes, surveillance, policing, border control, and disaster response. Boyle raises ethical and legal questions about accountability, privacy, and the risks of automation in decision-making during conflict. Drawing on case studies from around the world, he provides a balanced analysis of how drones are reshaping the meaning of power, freedom, and human rights in the 21st century. A must-read for anyone who wants to understand the political and moral dilemmas of this disruptive technology.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="col-6 col-sm-6 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/to-kill-a-moking-bird.jpg" alt="Book 3">
+      </div>
+      <div class="flip-card-back">
+        <h6>To kill a Mockingbird</h6>
+        <p>By Harper Lee <br> Price: ₹299</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('To Kill a Mockingbird', 'Harper Lee', '299', 'img/to-kill-a-moking-bird.jpg', 'Harper Lee’s To Kill a Mockingbird is a timeless classic set in the racially divided American South of the 1930s. It follows the story of Scout Finch, a young girl whose father, Atticus Finch, is a principled lawyer defending a Black man wrongly accused of a crime. Through Scout’s innocent yet sharp eyes, the novel explores themes of justice, morality, prejudice, and compassion. Rich with unforgettable characters, moving storytelling, and a powerful message about standing up for what is right, this book remains one of the most important works of American literature, continuing to inspire generations worldwide.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="col-6 col-sm-6 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/the-recuriter.jpg" alt="Book 4">
+      </div>
+      <div class="flip-card-back">
+        <h6>The Recruiter</h6>
+        <p>By Douglas London <br> Price: ₹549</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The Recruiter', 'Douglas London', '429', 'img/the-recuriter.jpg', 'Douglas London’s The Recruiter takes readers into the secretive world of espionage through the lens of a veteran CIA officer. The book reveals the psychology, skill, and art behind recruiting spies, and how intelligence gathering has evolved in the digital era. Blending gripping real-life stories with deep insights, London illustrates the delicate balance of manipulation, trust, and loyalty at the heart of spycraft. More than just a memoir, it is a rare insider look at how global intelligence operates in times of uncertainty, political turmoil, and shifting power structures. A compelling read for anyone fascinated by history, espionage, and real-world spy operations.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <!-- categoreis -->
+ <div class="container mt-5" id="category-section">
+  <h2 class="text-center mb-5">Explore Book Categories</h2>
+  <div class="row g-4">
+
+    <!-- Fiction -->
+    <div class="col-md-4 col-sm-6">
+      <a href="fiction.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">📚</div>
+          <div class="category-title">Fiction</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Non-Fiction -->
+    <div class="col-md-4 col-sm-6">
+      <a href="non_fiction.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">📖</div>
+          <div class="category-title">Non-Fiction</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Children -->
+    <div class="col-md-4 col-sm-6">
+      <a href="children.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">👶</div>
+          <div class="category-title">Children</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Biography -->
+    <div class="col-md-4 col-sm-6">
+      <a href="biography.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">🧑‍🏫</div>
+          <div class="category-title">Biography</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Comics -->
+    <div class="col-md-4 col-sm-6">
+      <a href="comics.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">🦸‍♂️</div>
+          <div class="category-title">Comics</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Science -->
+    <div class="col-md-4 col-sm-6">
+      <a href="science.html" class="text-decoration-none">
+        <div class="category-card">
+          <div class="category-icon">🔬</div>
+          <div class="category-title">Science</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- bestsellers and deals -->
+  <div class="container mt-5" id="book-cards">
+    <div class="row justify-content-center g-5">
+      <h1>Bestsellers</h1>
+      <!-- Card 1 -->
+    <div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/osho.webp" alt="Book 4"><span class="badge ">new</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Jeevan Ki Khoj</h6>
+        <p> By Osho <br> Price: ₹199</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Jeevan Ki Khoj', 'Osho', '199', 'img/jeevan_ki_khoj.jpg', 'Jeevan Ki Khoj by Osho is a profound and thought-provoking spiritual discourse that invites readers to deeply explore the meaning of life, self-awareness, and inner truth. Through his fearless insights and powerful storytelling, Osho challenges conventional beliefs and encourages a journey beyond religion, tradition, and societal conditioning. This book is not just about finding answers—it’s about awakening to life itself. Written in a simple yet poetic Hindi style, Jeevan Ki Khoj opens a window into deeper consciousness, offering clarity, peace, and a new way of living. Ideal for spiritual seekers, meditators, and readers looking for personal transformation, this book becomes a guide to embracing authenticity, freedom, and love as the core of existence.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/the-help.jpg" alt="Book 2">
+      </div>
+      <div class="flip-card-back">
+        <h6>The Help</h6>
+        <p> By Kathryn Stockett <br>Price: ₹359</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('The Help', 'Kathryn Stockett', '359', 'img/the-help.jpg', 'The Help by Kathryn Stockett is a deeply moving and inspiring novel set in the racially segregated American South of the 1960s. The story follows three extraordinary women—Aibileen, Minny, and Skeeter—who come together to challenge the social norms of their time by secretly writing a book that reveals the struggles, hopes, and resilience of Black maids working in white households. With courage, humor, and compassion, they risk everything to give voice to the voiceless and ignite conversations that society tries to silence. More than just a novel, The Help is a story of friendship, truth, and the fight for dignity. Rich in character and emotion, this modern classic inspires readers to question prejudice, embrace empathy, and believe in the power of change.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/invisible-helix.jpg" alt="Book 3">
+      </div>
+      <div class="flip-card-back">
+        <h6>Invisible Helix</h6>
+        <p>By C.Name <br> Price: ₹299</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Invisible Helix', 'C. Name', '299', 'img/invisible-helix.jpg', 'Invisible Helix is a gripping science-fiction thriller that takes readers on a journey into the hidden world of genetic manipulation, forgotten experiments, and buried secrets. When renowned biologist Dr. Arjun Verma stumbles upon a mysterious DNA sequence — a helix invisible to modern science — he uncovers a decades-old conspiracy that threatens the very fabric of human evolution. As the lines blur between discovery and ethics, Arjun must race against shadowy organizations determined to keep the truth buried. With the help of a haunted hacker, a former intelligence agent, and a lost research diary, he dives deeper into a world where knowledge itself becomes lethal. Will the discovery of the Invisible Helix unlock the next step in evolution—or unleash chaos upon humanity? A perfect blend of suspense, science, and moral dilemmas, this novel keeps readers hooked until the very last page.')">
+          See More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/diwar-me-ek-khidki-rehti-thi.webp" alt="Book 4"><span class="badge ">Bestseller</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Deewar Mein Ek Khidki Rehti Thi</h6>
+        <p>By Vinod Kumar Shukla <br> Price: ₹249</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Deewar Mein Ek Khidki Rehti Thi', 'Vinod Kumar Shukla', '249',  'img/diwar-me-ek-khidki-rehti-thi.webp', 'Deewar Mein Ek Khidki Rehti Thi, written by celebrated Hindi author Vinod Kumar Shukla, is a poetic and philosophical novel that reflects on freedom, confinement, and the power of imagination. Through its deeply symbolic narrative, the story follows a man whose ordinary life is transformed by a mysterious window in his wall—a window that opens into the world of silence, dreams, and endless possibilities. With his characteristic lyrical prose, Shukla paints a profound portrait of solitude, beauty, and human spirit, blending realism with surrealism. This masterpiece of modern Hindi literature is not only a meditation on life and perception but also a gentle reminder of how imagination can set us free, even within the walls of limitation.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+
+  <!-- popular -->
+  <div class="container mt-5" id="book-cards">
+    <div class="row justify-content-center g-5">
+      <h1>Popular Books</h1>
+      <!-- Card 1 -->
+    <div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/life-of-a-pai.jpg" alt="Book 4"><span class="badge ">new</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Life of Pi</h6>
+        <p> By Yann Martel <br>Price: ₹399</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Life of Pi', 'Yann Martel', '279', 'img/life-of-a-pai.jpg', 'Life of Pi by Yann Martel is an extraordinary tale of survival, faith, and the power of storytelling. The novel follows the incredible journey of Pi Patel, a young Indian boy who survives a devastating shipwreck only to find himself stranded on a lifeboat in the Pacific Ocean with an unlikely companion — a fierce Bengal tiger named Richard Parker. As days turn into weeks, Pi battles hunger, fear, and the raw forces of nature, while questioning the meaning of life, the presence of God, and the boundary between truth and imagination. Blending adventure, philosophy, and spirituality, Life of Pi is both a thrilling survival story and a deeply moving meditation on belief, resilience, and the stories that define us. A modern classic that continues to inspire readers worldwide.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/soul.jpg" alt="Soul Book">
+        <span class="badge">new</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Soul</h6>
+        <p>By Olivia Wilson <br>Price: ₹349</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Soul', 'Olivia Wilson', '349', 'img/soul.jpg', 'Soul by Olivia Wilson is a heartfelt journey through emotion, healing, and self-discovery. Written in lyrical and poetic language, the book invites readers to reflect on love, grief, resilience, and the quiet strength of the human spirit. Each chapter is like a mirror that gently encourages readers to embrace their wounds, rediscover hope, and reconnect with the deeper essence of who they are. More than just a collection of thoughts, Soul serves as a companion during life’s highs and lows, offering wisdom, comfort, and courage to keep moving forward. A book for anyone seeking inner peace and personal transformation.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/nusti-uthathev.webp" alt="Nasti Uthathev">
+        <span class="badge">new</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>नसती उठाठेव</h6>
+        <p>By पु. ल. देशपांडे <br> Price: ₹299</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('नसती उठाठेव', 'पु. ल. देशपांडे', '299', 'img/nusti-uthathev.webp', 'पु. ल. देशपांडे यांचे “नसती उठाठेव” हे पुस्तक त्यांच्या खास विनोदी शैलीतील एक अप्रतिम नमुना आहे. या पुस्तकात जीवनातील साध्या, रोजच्या गोष्टींवर त्यांची विनोदी आणि उपरोधिक शैलीत मांडलेली निरीक्षणे वाचकाला हसवतात तसेच विचार करायला लावतात. त्यांच्या भाषाशैलीतील सहजता, तल्लख निरीक्षणशक्ती आणि हलक्याफुलक्या प्रसंगांमधील खोल अर्थ हे या पुस्तकाचे वैशिष्ट्य आहे. “नसती उठाठेव” हे केवळ मनोरंजन नाही तर मानवी स्वभावाचा, समाजाचा आणि नातेसंबंधांचा आरसा दाखवणारे साहित्य आहे, जे मराठी वाङ्मयातील अमूल्य रत्न मानले जाते.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="col-6 col-sm-4 col-md-3">
+  <div class="flip-card" onclick="this.classList.toggle('flip')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="img/Murdrland.jpg" alt="Murderland">
+        <span class="badge">new</span>
+      </div>
+      <div class="flip-card-back">
+        <h6>Murderland</h6>
+        <p>By Caroline Fraser <br> Price: ₹499</p>
+        <button class="btn btn-sm btn-primary card-btn"
+          onclick="event.stopPropagation(); viewDetails('Murderland', 'Caroline Fraser', '499', 'img/Murdrland.jpg', 'Murderland: Crime and Bloodlust in the Time of Serial Killers by Caroline Fraser is a chilling exploration into the terrifying world of serial murder and society’s obsession with it. Combining true crime narratives with deep psychological insights, the book examines not only the minds of killers but also the cultural forces that glamorize and sensationalize their crimes. Through real cases, historical analysis, and media portrayals, Fraser uncovers how fear, fame, and fascination intertwine in the age of serial killers. Murderland is more than a crime book — it is a powerful commentary on human darkness, the fragility of morality, and the unsettling attraction people have toward violence and mystery.')">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <div class="dots"></div>
+  <!-- chatbot -->
+  <div id="bot-button" draggable="true">🤖</div>
+ 
+
+  <div id="chat-box">
+    <div class="chat-header">Book Finder Bot</div>
+    <div class="chat-body" id="chat-body">
+      <div class="chat-msg">Hi! What mood are you in today?</div>
+    </div>
+    <div class="chat-footer">
+      <button class="mood-button" onclick="suggestBooks('happy')">😊 Happy</button>
+      <button class="mood-button" onclick="suggestBooks('sad')">😢 Sad</button>
+      <button class="mood-button" onclick="suggestBooks('motivated')">💪 Motivated</button>
+      <button class="mood-button" onclick="suggestBooks('curious')">🤔 Curious</button>
+    </div>
+  </div>
+  <!-- newsletter -->
+  <section class="py-5 bg-warning text-white" id="newsletter">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h3 class="fw-bold">Subscribe to Our Newsletter</h3>
+          <p>Get the latest updates on new products and upcoming sales</p>
+        </div>
+        <div class="col-md-6">
+          <form class="row g-2">
+            <div class="col-8">
+              <input type="email" class="form-control" placeholder="Your email address">
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-dark w-100">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+ <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row">
+      
+      <!-- Brand / About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+        <p>
+          Your one-stop destination for books across all genres. 
+          Discover, read, and grow with us. 📚
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+        <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+        <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+        <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <!-- Popular Categories (Replaced Newsletter) -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+        <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+        <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+        <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>Booknest</strong>. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- Login Modal -->
+<!-- Login/Signup Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-3 shadow-lg">
+      <div class="modal-header bg-primary text-black">
+        <h5 class="modal-title" id="modalTitle">Login to Booknest</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+          <div class="mb-3">
+            <label class="form-label text-black">Email address</label>
+            <input type="email" class="form-control" required placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-black">Password</label>
+            <input type="password" class="form-control" required placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+          <p class="text-center">Don’t have an account? 
+            <a href="#" id="showSignup">Sign Up</a>
+          </p>
+        </form>
+
+        <!-- Signup Form (Hidden by default) -->
+        <form id="signupForm" class="d-none">
+          <div class="mb-3">
+            <label class="form-label text-black">Full Name</label>
+            <input type="text" class="form-control" required placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-black">Email address</label>
+            <input type="email" class="form-control" required placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-black">Password</label>
+            <input type="password" class="form-control" required placeholder="Create a password">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-black">Contact Number</label>
+            <input type="tel" class="form-control" required placeholder="Enter your phone number">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-black">Gender</label>
+            <div class="d-flex gap-3">
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" required>
+                <label class="form-check-label">Male</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender">
+                <label class="form-check-label">Female</label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success w-100 mb-3">Sign Up</button>
+          <p class="text-center">Already have an account? 
+            <a href="#" id="showLogin">Login</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+<script>
+
+  function viewDetails(title, author, price, img, desc) {
+    const encodedDesc = encodeURIComponent(desc);
+    const encodedImg = encodeURIComponent(img); // <-- Add this line
+
+    window.location.href = `details.html?title=${title}&author=${author}&price=${price}&img=${encodedImg}&desc=${encodedDesc}`;
+  }
+
+
+
+  // Login Form Submission
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+    const modalTitle = document.getElementById("modalTitle");
+
+    document.getElementById("showSignup").addEventListener("click", function (e) {
+      e.preventDefault();
+      loginForm.classList.add("d-none");
+      signupForm.classList.remove("d-none");
+      modalTitle.textContent = "Create a Booknest Account";
+    });
+
+    document.getElementById("showLogin").addEventListener("click", function (e) {
+      e.preventDefault();
+      signupForm.classList.add("d-none");
+      loginForm.classList.remove("d-none");
+      modalTitle.textContent = "Login to Booknest";
+    });
+
+    // Auto open modal after 3s
+    setTimeout(() => {
+      var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+      authModal.show();
+    }, 3000);
+
+    // Handle login form submit
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Login successful!");
+      bootstrap.Modal.getInstance(document.getElementById('authModal')).hide();
+    });
+
+    // Handle signup form submit
+    signupForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Signup successful!");
+      bootstrap.Modal.getInstance(document.getElementById('authModal')).hide();
+    });
+  });
+
+
+
+
+
+</script>
+
+
+</html>

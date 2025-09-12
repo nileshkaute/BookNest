@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Booknest</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/check.css">
+  <style></style>
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm w-100">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold" href="index.html">
+        <span style="color: red;">Book</span><span style="color: yellow;">nest</span>📙
+      </a>
+      <!-- Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Center Nav Links -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 text-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a>
+          </li>
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+              <i class="bi bi-grid-fill"></i> Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Search, Cart, Login -->
+        <form class="d-flex align-items-center gap-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+          <!-- Cart Button with Count -->
+          <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= CHECKOUT CONTENT ================= -->
+  <div class="container py-5">
+    <div class="row">
+      <!-- Left Column: Billing + Payment -->
+      <div class="col-lg-8">
+        <div class="checkout-card">
+          <h3 class="mb-4">Checkout</h3>
+          <!-- Billing Address -->
+          <h5 class="mb-3"><i class="bi bi-geo-alt-fill me-2"></i>Billing Address</h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" required>
+              <div class="invalid-feedback">Please enter your first name.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" required>
+              <div class="invalid-feedback">Please enter your last name.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+            <div class="invalid-feedback">Please enter a valid phone number.</div>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">Please enter your address.</div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+                <option>India</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </select>
+              <div class="invalid-feedback">Please select a country.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>California</option>
+                <option>Maharashtra</option>
+                <option>Texas</option>
+                <option>England</option>
+              </select>
+              <div class="invalid-feedback">Please select a state.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" required>
+              <div class="invalid-feedback">Please enter a zip code.</div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Payment Method -->
+          <h5 class="mb-3"><i class="bi bi-credit-card me-2"></i>Payment Method</h5>
+
+          <div class="payment-method" onclick="selectPayment('credit-card')">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="credit-card" checked>
+              <label class="form-check-label fw-bold" for="credit-card">Credit Card</label>
+            </div>
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="cc-name" class="form-label">Name on card</label>
+                  <input type="text" class="form-control" id="cc-name" required>
+                  <small class="text-muted">Full name as displayed on card</small>
+                  <div class="invalid-feedback">Name on card is required.</div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="cc-number" class="form-label">Credit card number</label>
+                  <input type="text" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                  <div class="invalid-feedback">Valid card number is required.</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-expiration" class="form-label">Expiration</label>
+                  <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
+                  <div class="invalid-feedback">Expiration date required.</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv" placeholder="XXX" required>
+                  <div class="invalid-feedback">Security code required.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-method" onclick="selectPayment('paypal')">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="paypal">
+              <label class="form-check-label fw-bold" for="paypal">PayPal</label>
+            </div>
+            <div class="mt-2 text-muted">You will be redirected to PayPal website to complete your payment.</div>
+          </div>
+
+          <div class="payment-method" onclick="selectPayment('cod')">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="cod">
+              <label class="form-check-label fw-bold" for="cod">Cash on Delivery</label>
+            </div>
+            <div class="mt-2 text-muted">Pay with cash when your order is delivered.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <div class="col-lg-4">
+        <div class="checkout-card">
+          <h5 class="mb-3">Order Summary</h5>
+          <!-- Dynamic Order Items -->
+          <div id="order-items"></div>
+
+          <div class="order-summary-item">
+            <div>Subtotal</div>
+            <div id="subtotal">₹0</div>
+          </div>
+          <div class="order-summary-item">
+            <div>Shipping</div>
+            <div id="shipping">₹50</div>
+          </div>
+          <div class="order-summary-item">
+            <div>Tax</div>
+            <div id="tax">₹0</div>
+          </div>
+          <div class="order-total">
+            <div>Total</div>
+            <div id="total">₹0</div>
+          </div>
+
+          <button class="btn btn-pay" onclick="processPayment()">
+            <i class="bi bi-lock-fill me-2"></i>Complete Payment
+          </button>
+        </div>
+
+        <div class="checkout-card mt-4">
+          <h6><i class="bi bi-truck me-2"></i>Delivery Information</h6>
+          <p class="small mb-0">Estimated delivery: 3-5 business days</p>
+          <p class="small">Free returns within 30 days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-md-left">
+      <div class="row">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+          <p>Your one-stop destination for books across all genres. Discover, read, and grow with us. 📚</p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+          <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+          <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+          <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+          <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+          <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+          <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+          <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+        </div>
+
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+          <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+          <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+          <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+          <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p class="text-center text-md-start">© 2025 <strong>Booknest</strong>. All rights reserved.</p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <div class="text-center text-md-end">
+            <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <!-- Receipt Loader -->
+  <div id="payment-loader" class="loader-overlay d-none">
+    <div class="loader-box">
+      <div class="receipt"></div>
+      <p id="loader-text">Payment Processing…</p>
+      <p class="success-msg" id="success-msg">✅ Payment Successful!</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    function updateCartCount() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = count;
+    }
+    
+    function displayOrderSummary() {
+      const orderItems = document.getElementById("order-items");
+      let subtotal = 0;
+      
+      if (cart.length === 0) {
+        orderItems.innerHTML = "<p>Your cart is empty.</p>";
+        document.getElementById("subtotal").textContent = "₹0";
+        document.getElementById("tax").textContent = "₹0";
+        document.getElementById("total").textContent = "₹0";
+        return;
+      }
+      
+      let itemsHTML = "";
+      cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        itemsHTML += `<div class="order-summary-item"><div>${item.title} × ${item.quantity}</div><div>₹${itemTotal}</div></div>`;
+      });
+      
+      orderItems.innerHTML = itemsHTML;
+      
+      let shipping = 50;
+      let tax = (subtotal * 0.1).toFixed(2);
+      let total = subtotal + shipping + parseFloat(tax);
+      
+      document.getElementById("subtotal").textContent = "₹" + subtotal;
+      document.getElementById("shipping").textContent = "₹" + shipping;
+      document.getElementById("tax").textContent = "₹" + tax;
+      document.getElementById("total").textContent = "₹" + total.toFixed(2);
+    }
+    
+    function selectPayment(method) {
+      document.querySelectorAll('.payment-method').forEach(item => {
+        item.classList.remove('selected');
+      });
+      document.getElementById(method).checked = true;
+      document.querySelector(`#${method}`).closest('.payment-method').classList.add('selected');
+    }
+    
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+    
+    function validatePhone(phone) {
+      const re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+      return re.test(phone);
+    }
+    
+    function validateCardNumber(number) {
+      const re = /^[0-9]{16}$/;
+      return re.test(number.replace(/\s/g, ''));
+    }
+    
+    function validateExpiration(date) {
+      const re = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+      if (!re.test(date)) return false;
+      
+      const [month, year] = date.split('/');
+      const now = new Date();
+      const currentYear = now.getFullYear() % 100;
+      const currentMonth = now.getMonth() + 1;
+      
+      if (parseInt(year) < currentYear) return false;
+      if (parseInt(year) === currentYear && parseInt(month) < currentMonth) return false;
+      
+      return true;
+    }
+    
+    function validateCVV(cvv) {
+      const re = /^[0-9]{3,4}$/;
+      return re.test(cvv);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      selectPayment('credit-card'); // default
+      updateCartCount();
+      displayOrderSummary();
+      
+      // Add input validation listeners
+      document.getElementById('email').addEventListener('blur', function() {
+        if (!validateEmail(this.value)) {
+          this.classList.add('is-invalid');
+        } else {
+          this.classList.remove('is-invalid');
+        }
+      });
+      
+      document.getElementById('phone').addEventListener('blur', function() {
+        if (!validatePhone(this.value)) {
+          this.classList.add('is-invalid');
+        } else {
+          this.classList.remove('is-invalid');
+        }
+      });
+      
+      document.getElementById('cc-number').addEventListener('blur', function() {
+        if (!validateCardNumber(this.value)) {
+          this.classList.add('is-invalid');
+        } else {
+          this.classList.remove('is-invalid');
+        }
+      });
+      
+      document.getElementById('cc-expiration').addEventListener('blur', function() {
+        if (!validateExpiration(this.value)) {
+          this.classList.add('is-invalid');
+        } else {
+          this.classList.remove('is-invalid');
+        }
+      });
+      
+      document.getElementById('cc-cvv').addEventListener('blur', function() {
+        if (!validateCVV(this.value)) {
+          this.classList.add('is-invalid');
+        } else {
+          this.classList.remove('is-invalid');
+        }
+      });
+    });
+    
+    // ✅ Final processPayment with loader
+    function processPayment() {
+      const formInputs = document.querySelectorAll('input[required], select[required]');
+      let isValid = true;
+      
+      // Validate all required fields
+      formInputs.forEach(input => {
+        if (!input.value) {
+          input.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          input.classList.remove('is-invalid');
+        }
+      });
+      
+      // Validate email format
+      const emailInput = document.getElementById('email');
+      if (emailInput.value && !validateEmail(emailInput.value)) {
+        emailInput.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      // Validate phone format
+      const phoneInput = document.getElementById('phone');
+      if (phoneInput.value && !validatePhone(phoneInput.value)) {
+        phoneInput.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      // If credit card is selected, validate card details
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').id;
+      if (paymentMethod === 'credit-card') {
+        const cardNumber = document.getElementById('cc-number');
+        const expiration = document.getElementById('cc-expiration');
+        const cvv = document.getElementById('cc-cvv');
+        
+        if (!validateCardNumber(cardNumber.value)) {
+          cardNumber.classList.add('is-invalid');
+          isValid = false;
+        }
+        
+        if (!validateExpiration(expiration.value)) {
+          expiration.classList.add('is-invalid');
+          isValid = false;
+        }
+        
+        if (!validateCVV(cvv.value)) {
+          cvv.classList.add('is-invalid');
+          isValid = false;
+        }
+      }
+      
+      if (!isValid) {
+        alert('Please fill all required fields correctly.');
+        return;
+      }
+      
+      if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+      
+      // Get book titles from cart
+      const bookTitles = cart.map(item => `${item.title} (x${item.quantity})`).join(', ');
+      
+      const customerInfo = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        country: document.getElementById("country").value,
+        state: document.getElementById("state").value,
+        zip: document.getElementById("zip").value,
+        paymentMethod: paymentMethod,
+        bookTitles: bookTitles,
+        totalAmount: document.getElementById("total").textContent,
+        orderId: "BN" + Date.now()
+      };
+      
+      // save details
+      localStorage.setItem("orderDetails", JSON.stringify(customerInfo));
+      
+      // clear cart
+      localStorage.removeItem("cart");
+      cart = [];
+      updateCartCount();
+      
+      if (paymentMethod === "cod") {
+        // Cash on Delivery → no loader
+        window.location.href = "order-success.html";
+      } else {
+        // Online Payments → show loader
+        document.getElementById("payment-loader").classList.remove("d-none");
+        
+        // After 8s → show success
+        setTimeout(() => {
+          document.getElementById("loader-text").style.display = "none";
+          document.getElementById("success-msg").style.display = "block";
+        }, 8000);
+        
+        // After 10s → redirect
+        setTimeout(() => {
+          window.location.href = "order-success.html";
+        }, 10000);
+      }
+    }
+  </script>
+</body>
+</html>

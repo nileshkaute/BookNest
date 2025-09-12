@@ -1,0 +1,228 @@
+/* ===========================
+   Checkout Page Styling
+   =========================== */
+:root {
+  --primary: #2c3e50; /* Deep navy */
+  --accent: #f39c12; /* Warm gold */
+  --success: #28a745;
+  --light-bg: #f8f9fa;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles */
+.checkout-card {
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--shadow);
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Decorative accent stripe */
+.checkout-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 150%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 0 0 50% 50%;
+  opacity: 0.8;
+}
+
+/* Form Inputs */
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.25);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Order Summary Items */
+.order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+/* Payment Button */
+.btn-pay {
+  background: linear-gradient(135deg, var(--success), #218838);
+  color: white;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-pay:hover {
+  background: linear-gradient(135deg, #218838, var(--success));
+  transform: scale(1.02);
+  color: white;
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Payment Methods */
+.payment-method {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  position: relative;
+}
+
+.payment-method:hover {
+  border-color: var(--accent);
+  background-color: rgba(243, 156, 18, 0.05);
+}
+
+.payment-method.selected {
+  border-color: var(--primary);
+  background: rgba(165, 177, 188, 0.05);
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2);
+}
+
+/* Radio Button Styling */
+.payment-method .form-check-input {
+  accent-color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--primary), #1a252f);
+  color: white;
+  padding: 25px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent);
+  margin: 0 6px;
+  transition: all 0.3s;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Small Typography Improvements */
+h3, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+small {
+  color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .checkout-card {
+    padding: 20px;
+  }
+
+  .btn-pay {
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+}
+ /* Loader Overlay */
+    .loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 15, 15, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    /* Loader Box */
+    .loader-box {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      width: 260px;
+      animation: pop 0.4s ease;
+    }
+
+    /* Receipt animation */
+    .receipt {
+      width: 100px;
+      height: 0;
+      background: repeating-linear-gradient(white, white 18px, #ccc 20px);
+      margin: 0 auto 15px;
+      animation: print 3s forwards infinite;
+    }
+    @keyframes print {
+      0% { height: 0; }
+      100% { height: 120px; }
+    }
+
+    /* Pop animation */
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Success message */
+    .success-msg {
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+      display: none;
+      margin-top: 15px;
+    }

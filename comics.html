@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booknest - Comics</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style/catogoreis.css">
+  <style>
+    /* Flip card styling */
+    
+    .comics-header {
+      background-color: #eae729; /* Comic vibe */
+      color: white;
+      height: 200px;
+    }
+   
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <span style="color: red;">Book</span><span style="color: yellow;">nest</span>📙</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-grid-fill"></i> Categories
+            </a>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="fiction.html">Fiction</a></li>
+              <li><a class="dropdown-item" href="non_fiction.html">Non-fiction</a></li>
+              <li><a class="dropdown-item" href="science.html">Science</a></li>
+              <li><a class="dropdown-item" href="biogrphy.html">Biographies</a></li>
+              <li><a class="dropdown-item" href="children.html">Children's Books</a></li>
+              <li><a class="dropdown-item" href="comics.html">Comics</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex align-items-center gap-3">
+          <input class="form-control me-2" type="search" placeholder="Search books...">
+            <a href="cart.html" class="btn btn-cart position-relative">
+            <i class="bi bi-cart-fill bi1"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+        
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="comics-header text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Comic Books</h1>
+      <p class="lead">Superheroes and legendary stories brought to life in panels.</p>
+    </div>
+  </div>
+
+  <div class="container mt-3 mt-md-5">
+    <!-- Row 1 -->
+    <div class="row justify-content-center g-3 book-row">
+     
+
+      <!-- Spider-Man -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/spider-man.webp" alt="Spider-Man">
+              <span class="badge bg-danger position-absolute top-0 end-0 m-2">Marvel</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Spider-Man</h6>
+              <p>By Marvel Comics <br>Price: ₹399</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Spider-Man', 'Marvel Comics', '399', 'img/comics/spider-man.webp', 'The amazing adventures of Peter Parker.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Batman -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/batman.jpg" alt="Batman">
+              <span class="badge bg-dark position-absolute top-0 end-0 m-2">DC</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Batman</h6>
+              <p>By DC Comics <br>Price: ₹450</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Batman', 'DC Comics', '450', 'img/comics/batman.jpg', 'The Dark Knight protects Gotham.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Superman -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/superman.jpeg" alt="Superman">
+              <span class="badge bg-primary position-absolute top-0 end-0 m-2">DC</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Superman</h6>
+              <p>By DC Comics <br>Price: ₹420</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Superman', 'DC Comics', '420', 'img/comics/superman.jpeg', 'The Man of Steel fights for justice.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iron Man -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/ironman.jpeg" alt="Iron Man">
+              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Marvel</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Iron Man</h6>
+              <p>By Marvel Comics <br>Price: ₹480</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Iron Man', 'Marvel Comics', '480', 'img/comics/ironman.jpeg', 'Tony Stark becomes Iron Man.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row justify-content-center g-3 book-row">
+     
+      <!-- Wonder Woman -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/wonderwomen.webp" alt="Wonder Woman">
+              <span class="badge bg-danger position-absolute top-0 end-0 m-2">DC</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Wonder Woman</h6>
+              <p>By DC Comics <br>Price: ₹430</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Wonder Woman', 'DC Comics', '430', 'img/comics/wonderwomen.webp', 'Diana defends peace and justice.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avengers -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/avangers.webp" alt="Avengers">
+              <span class="badge bg-success position-absolute top-0 end-0 m-2">Marvel</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Avengers</h6>
+              <p>By Marvel Comics <br>Price: ₹600</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Avengers', 'Marvel Comics', '600', 'img/comics/avangers.webp', 'Earth’s mightiest heroes unite.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- X-Men -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/x-men.webp" alt="X-Men">
+              <span class="badge bg-secondary position-absolute top-0 end-0 m-2">Marvel</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>X-Men</h6>
+              <p>By Marvel Comics <br>Price: ₹550</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('X-Men', 'Marvel Comics', '550', 'img/comics/x-men.webp', 'Mutants fight for coexistence.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deadpool -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="flip-card" onclick="this.classList.toggle('flip')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/comics/deadpool.webp" alt="Deadpool">
+              <span class="badge bg-danger position-absolute top-0 end-0 m-2">Marvel</span>
+            </div>
+            <div class="flip-card-back">
+              <h6>Deadpool</h6>
+              <p>By Marvel Comics <br>Price: ₹390</p>
+              <button class="btn btn-sm btn-primary card-btn"
+                onclick="event.stopPropagation(); viewDetails('Deadpool', 'Marvel Comics', '390', 'img/comics/deadpool.webp', 'The merc with a mouth.')">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row">
+      
+      <!-- Brand / About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Booknest</h5>
+        <p>
+          Your one-stop destination for books across all genres. 
+          Discover, read, and grow with us. 📚
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="index.html" class="text-white" style="text-decoration:none;">Home</a></p>
+        <p><a href="about.html" class="text-white" style="text-decoration:none;">About Us</a></p>
+        <p><a href="contact.html" class="text-white" style="text-decoration:none;">Contact</a></p>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Categories</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pune, Maharashtra, India</p>
+        <p><i class="fas fa-envelope mr-3"></i> support@booknest.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <!-- Popular Categories (Replaced Newsletter) -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Popular Categories</h5>
+        <p><a href="fiction.html" class="text-white" style="text-decoration:none;">Fiction</a></p>
+        <p><a href="non-fiction.html" class="text-white" style="text-decoration:none;">Non-Fiction</a></p>
+        <p><a href="biography.html" class="text-white" style="text-decoration:none;">Biographies</a></p>
+        <p><a href="children.html" class="text-white" style="text-decoration:none;">Children's Books</a></p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>Booknest</strong>. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function viewDetails(title, author, price, img, desc) {
+      const encodedDesc = encodeURIComponent(desc);
+      const encodedImg = encodeURIComponent(img);
+      window.location.href = `details.html?title=${title}&author=${author}&price=${price}&img=${encodedImg}&desc=${encodedDesc}`;
+    }
+  </script>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
