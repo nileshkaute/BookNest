@@ -45,3 +45,15 @@ const botButton = document.getElementById("bot-button");
     // <!-- Drag and Drop Functionality for Book Image -->
   
 
+ 
+document.querySelectorAll(".flip-card").forEach(card => {
+  card.addEventListener("click", function () {
+    // Close all other flipped cards
+    document.querySelectorAll(".flip-card").forEach(c => {
+      if (c !== card) c.classList.remove("flip");
+    });
+
+    // Toggle the clicked card
+    card.classList.toggle("flip");
+  });
+});

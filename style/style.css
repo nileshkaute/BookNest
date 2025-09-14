@@ -11,6 +11,12 @@
 
 body {
   background: linear-gradient(white);
+  
+}
+
+#book-cards .col-6 {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .navbar {
@@ -221,6 +227,7 @@ body {
   gap: 20px;
   padding: 20px;
   height: auto;
+  cursor: pointer;
   /* Changed from fixed 400px to auto */
 }
 
@@ -254,10 +261,22 @@ body {
   border: 1px solid #E0E0E0;
 }
 
-.flip-card:hover .flip-card-inner,
+/* Remove hover flipping completely */
+.flip-card:hover .flip-card-inner {
+  transform: none; 
+}
+
+/* Flip only when .flip class is added by JS */
 .flip-card.flip .flip-card-inner {
   transform: rotateY(180deg);
 }
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+
 
 .flip-card-front,
 .flip-card-back {
